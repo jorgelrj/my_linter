@@ -1,6 +1,4 @@
 analyzer:
-  plugins:
-    - dart_code_metrics
   errors:
     body_might_complete_normally_nullable: ignore
     library_private_types_in_public_api: ignore
@@ -9,25 +7,6 @@ analyzer:
   exclude:
     - 'lib/generated_plugin_registrant.dart'
     - 'lib/**.g.dart'
-
-dart_code_metrics:
-  metrics:
-    cyclomatic-complexity: 20
-    number-of-parameters: 4
-    maximum-nesting-level: 5
-  metrics-exclude:
-    - test/**
-  rules:
-    - newline-before-return
-    - no-boolean-literal-compare
-    - no-empty-block
-    - no-equal-then-else
-    - prefer-conditional-expressions
-    - prefer-moving-to-variable:
-        allowed-duplicated-chains: 3
-  anti-patterns:
-    - long-method
-    - long-parameter-list
 
 linter:
   rules:
@@ -42,16 +21,19 @@ linter:
     - avoid_redundant_argument_values
     - avoid_return_types_on_setters
     - avoid_returning_null_for_void
-    - avoid_single_cascade_in_expression_statements
     - avoid_unnecessary_containers
     - cancel_subscriptions
     - close_sinks
+    - collection_methods_unrelated_type
     - constant_identifier_names
     - control_flow_in_finally
+    - depend_on_referenced_packages
+    - directives_ordering
     - empty_constructor_bodies
     - empty_statements
     - exhaustive_cases
     - implementation_imports
+    - implicit_call_tearoffs
     - library_names
     - library_prefixes
     - library_private_types_in_public_api
@@ -86,6 +68,8 @@ linter:
     - sized_box_for_whitespace
     - slash_for_doc_comments
     - sort_child_properties_last
+    - sort_pub_dependencies
+    - sort_unnamed_constructors_first
     - type_init_formals
     - unnecessary_brace_in_string_interps
     - unnecessary_const
@@ -102,7 +86,9 @@ linter:
     - unnecessary_string_interpolations
     - unnecessary_this
     - unnecessary_to_list_in_spreads
+    - unreachable_from_main
     - use_full_hex_values_for_flutter_colors
     - use_function_type_syntax_for_parameters
     - use_key_in_widget_constructors
     - use_rethrow_when_possible
+    - use_string_in_part_of_directives
